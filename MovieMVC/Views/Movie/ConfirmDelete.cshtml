@@ -1,0 +1,32 @@
+﻿@model MovieMVC.Models.Movie;
+@{
+    ViewData["Title"] = "Confirmation";
+}
+<h2>Confirmar exclusão</h2>
+
+@if (Model != null)
+{
+    <div class="w-100">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">Diretor: @Model.Description</p>
+                <p class="card-text">Gênero: @Model.Genre</p>
+                <div class="d-flex align-items-center">
+                    <a asp-action="Index" class="btn btn-outline-success mx-3">Cancelar</a>
+
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id"/>
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>Filme não encontrado</p>
+}

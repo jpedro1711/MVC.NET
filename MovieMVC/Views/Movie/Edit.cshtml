@@ -1,0 +1,29 @@
+﻿@model MovieMVC.Models.Movie;
+@{
+    ViewData["Title"] = "Edit";
+}
+@{
+    <h1>Editar Filme</h1>
+    <form asp-action="Editar">
+        <input type="hidden" value="@Model.Id" asp-for="Id" />
+        <div class="form-group my-2">
+            <label for="movieTitle">Título do Filme</label>
+            <input type="text" class="form-control" id="movieTitle" placeholder="Digite o nome do filme" required asp-for="Title" value="@Model.Title">
+        </div>
+        <div class="form-group my-2">
+            <label for="movieGenre">Gênero do Filme</label>
+            <input type="text" class="form-control" id="movieGenre" placeholder="Digite o gênero do filme" required asp-for="Genre" value="@Model.Genre">
+        </div>
+        <div class="form-group my-2">
+            <label for="movieDirector">Diretor do Filme</label>
+            <input type="text" class="form-control" id="movieDirector" placeholder="Digite o nome do diretor do filme" required asp-for="Diretor" value="@Model.Diretor">
+        </div>
+        <div class="form-group my-2">
+            <label for="movieDescription">Descrição do Filme</label>
+            <textarea type="text" class="form-control" id="movieDescription" placeholder="Digite a descrição do filme" rows="3" required asp-for="Description" value="@Model.Description"></textarea>
+        </div>
+        <br />
+        <a asp-action="Index" class="mx-3">Cancelar</a>
+        <button type="submit" class="btn btn-success">Editar</button>
+    </form>
+}

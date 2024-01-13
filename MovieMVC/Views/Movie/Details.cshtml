@@ -1,0 +1,23 @@
+﻿@model MovieMVC.Models.Movie;
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Detalhes do filme</h2>
+
+@if (Model != null) {
+    <div class="w-100">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">@Model.Description</p>
+                <p class="card-text">Diretor: @Model.Diretor</p>
+                <p class="card-text">Gênero: @Model.Genre</p>
+                <a asp-action="Index">Voltar a listagem</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>Filme não encontrado</p>
+}
